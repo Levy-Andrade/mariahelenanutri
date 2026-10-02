@@ -12,69 +12,64 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroPhoto && !reduce && scrollY < innerHeight) heroPhoto.style.transform = `translateY(${scrollY * 0.12}px)`;
   }, { passive: true });
 
-  // 2. Fundo animado: folhas/partículas flutuantes em canvas
+  // 2. Fundo animado: folhas coloridas caindo (com nervura, giro e balanço)
   const cv = document.getElementById('bgCanvas');
   if (cv && !reduce) {
     const ctx = cv.getContext('2d');
+    const COLORS = ['#3F7A5A', '#69937E', '#8BC34A', '#4DB6AC', '#A5D6A7', '#E0A93B', '#E58A4B', '#2E7D5B'];
     let W, H, pts = [];
     const mouse = { x: -999, y: -999 };
+    const mk = (top) => ({
+      x: Math.random() * W, y: top ? -30 : Math.random() * H,
+      r: 7 + Math.random() * 14, vy: .35 + Math.random() * .9, vx: (Math.random() - .5) * .4,
+      a: Math.random() * 6.28, va: (Math.random() - .5) * .03, ph: Math.random() * 6.28, sw: .4 + Math.random() * .9,
+      o: .45 + Math.random() * .45, c: COLORS[Math.floor(Math.random() * COLORS.length)]
+    });
     const resize = () => {
       W = cv.width = innerWidth; H = cv.height = innerHeight;
-      pts = Array.from({ length: Math.min(46, Math.floor(W / 30)) }, () => ({
-        x: Math.random() * W, y: Math.random() * H, r: 3 + Math.random() * 7,
-        vx: (Math.random() - .5) * .3, vy: -.15 - Math.random() * .35,
-        a: Math.random() * 6.28, va: (Math.random() - .5) * .01, o: .25 + Math.random() * .4
-      }));
+      pts = Array.from({ length: Math.min(70, Math.floor(W / 18)) }, () => mk(false));
     };
     resize(); addEventListener('resize', resize);
     addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
-    (function loop() {
+    (function loop(t) {
       ctx.clearRect(0, 0, W, H);
-      pts.forEach(p => {
+      pts.forEach((p, i) => {
         const dx = p.x - mouse.x, dy = p.y - mouse.y, d = Math.hypot(dx, dy);
-        if (d < 110) { p.x += dx / d * 1.6; p.y += dy / d * 1.6; }   // afasta do mouse
-        p.x += p.vx + Math.sin(p.a) * .3; p.y += p.vy; p.a += p.va * 3;
-        if (p.y < -20) { p.y = H + 20; p.x = Math.random() * W; }
-        if (p.x < -20) p.x = W + 20; if (p.x > W + 20) p.x = -20;
-        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a);
-        ctx.globalAlpha = p.o; ctx.fillStyle = '#69937E';
-        ctx.beginPath(); // formato de folha
-        ctx.moveTo(0, -p.r); ctx.quadraticCurveTo(p.r, 0, 0, p.r); ctx.quadraticCurveTo(-p.r, 0, 0, -p.r);
-        ctx.fill(); ctx.restore();
+        if (d < 120) { p.x += dx / d * 2.2; p.y += dy / d * 2.2; }
+        p.ph += .012; p.x += p.vx + Math.sin(p.ph) * p.sw; p.y += p.vy; p.a += p.va;
+        if (p.y > H + 30 || p.x < -40 || p.x > W + 40) pts[i] = mk(true);
+        const s = 1 + Math.sin(p.ph * 2) * .18;
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a); ctx.scale(s, 1);
+        ctx.globalAlpha = p.o; ctx.fillStyle = p.c;
+        ctx.beginPath(); ctx.moveTo(0, -p.r);
+        ctx.quadraticCurveTo(p.r * .9, -p.r * .2, 0, p.r); ctx.quadraticCurveTo(-p.r * .9, -p.r * .2, 0, -p.r); ctx.fill();
+        ctx.globalAlpha = p.o * .6; ctx.strokeStyle = 'rgba(255,255,255,.7)'; ctx.lineWidth = 1; // nervura
+        ctx.beginPath(); ctx.moveTo(0, -p.r * .8); ctx.lineTo(0, p.r * .9); ctx.stroke();
+        ctx.restore();
       });
       requestAnimationFrame(loop);
     })();
   }
 
-  // 3. EVOLUIR: acordeão horizontal com autoplay
+  // 3. EVOLUIR: clique fixa o pilar (sem hover). Autoplay só até o primeiro clique.
   const grid = document.querySelector('.evoluir-grid');
   if (grid) {
     const cards = [...grid.querySelectorAll('.evoluir-card')];
     const desktop = matchMedia('(min-width: 1025px)');
-    const prog = document.createElement('div');
-    prog.className = 'evoluir-progress'; prog.innerHTML = '<span></span>';
-    grid.after(prog);
-    const fill = prog.firstChild;
-    let cur = 0, timer, paused = false, t0 = 0;
-    const DUR = 4000;
-    const activate = i => { cur = i; cards.forEach((c, k) => c.classList.toggle('is-active', k === i)); t0 = performance.now(); };
+    const hint = document.createElement('p');
+    hint.className = 'evoluir-hint';
+    hint.innerHTML = 'Clique em uma <b>letra</b> para fixar o pilar que deseja ler.';
+    grid.after(hint);
+    let cur = 0, pinned = false, timer;
+    const activate = i => { cur = i; cards.forEach((c, k) => { c.classList.toggle('is-active', k === i); c.setAttribute('aria-expanded', k === i); }); };
+    const pin = i => { pinned = true; clearInterval(timer); activate(i); };
     cards.forEach((c, i) => {
-      c.tabIndex = 0;
-      c.addEventListener('mouseenter', () => { if (desktop.matches) { activate(i); paused = true; } });
-      c.addEventListener('click', () => activate(i));
-      c.addEventListener('focus', () => activate(i));
+      c.tabIndex = 0; c.setAttribute('role', 'button');
+      c.addEventListener('click', () => pin(i));
+      c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pin(i); } });
     });
-    grid.addEventListener('mouseleave', () => { paused = false; t0 = performance.now(); });
     activate(0);
-    (function tick(now) {
-      if (desktop.matches && !reduce) {
-        if (paused) t0 = now;
-        const p = Math.min((now - t0) / DUR, 1);
-        fill.style.width = (paused ? 100 : p * 100) + '%';
-        if (p >= 1) activate((cur + 1) % cards.length);
-      }
-      requestAnimationFrame(tick);
-    })(performance.now());
+    if (!reduce) timer = setInterval(() => { if (desktop.matches && !pinned) activate((cur + 1) % cards.length); }, 4000);
   }
 
   // 4. Contadores animados
