@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO & Metadados -->
+  <title>Maria Helena | Nutricionista Esportiva & Protocolo EVOLUIR</title>
+  <meta name="description" content="Nutrição esportiva e emagrecimento sem neuras. Conheça o Protocolo EVOLUIR com a Nutricionista Maria Helena. Consultas Presenciais e Online.">
+  <meta name="keywords" content="nutricionista esportiva, emagrecimento, protocolo evoluir, consulta nutricional online, nutrição esportiva presencial, dieta sem neuras">
+  <meta name="author" content="Maria Helena Nutricionista">
+
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Maria Helena | Nutrição Esportiva e Emagrecimento Consciente">
+  <meta property="og:description" content="Resultados reais com hábitos práticos e sem neuras. Agende sua consulta online ou presencial.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1594824813627-c102a0a25fae?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Google Fonts: Playfair Display (Serif Elegante) & Inter (Sans-serif moderna e limpa) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Folha de Estilos Principal -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animations.css">
+
+  <!-- Favicon com formato SVG botânico minimalista -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23557C67'/><path d='M50 22 C35 32 30 52 50 78 C70 52 65 32 50 22 Z' fill='%23FAF9F6'/><path d='M50 30 C58 45 56 60 50 72' stroke='%23557C67' stroke-width='3' stroke-linecap='round' fill='none'/></svg>">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <!-- ========================================================
+       CABEÇALHO & NAVEGAÇÃO
+       ======================================================== -->
+  <header class="site-header" id="topo">
+    <div class="container header-container">
+      <!-- Logotipo / Identidade -->
+      <a href="#topo" class="logo" aria-label="Maria Helena Nutricionista - Início">
+        <span class="logo-symbol">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12a10 10 0 0 1 10-10z"></path>
+            <path d="M12 6c-3 3-3 8 0 12"></path>
+            <path d="M12 12h5"></path>
+          </svg>
+        </span>
+        <div class="logo-text">
+          <span class="logo-name">Maria Helena</span>
+          <span class="logo-badge">Nutrição • CRN 00000/SP</span>
+        </div>
+      </a>
+
+      <!-- Menu de Navegação Desktop -->
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link active">Início</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#metodologia" class="nav-link">Protocolo EVOLUIR</a></li>
+          <li><a href="#servicos" class="nav-link">Serviços</a></li>
+          <li><a href="#calculadora" class="nav-link">Calculadora</a></li>
+          <li><a href="#galeria" class="nav-link">Resultados</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botão CTA do Header -->
+      <div class="header-actions">
+        <!-- [CONFIGURAR LINK WHATSAPP: Substitua '5511999999999' pelo seu número real com DDD] -->
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Nutri%20Maria%20Helena!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20consultas." 
+           class="btn btn-primary btn-sm header-cta" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          <span>Agendar Consulta</span>
+        </a>
+
+        <!-- Botão Menu Hambúrguer (Mobile) -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Gaveta Mobile -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <nav aria-label="Navegação mobile">
+          <ul class="mobile-nav-list">
+            <li><a href="#inicio" class="mobile-nav-link">Início</a></li>
+            <li><a href="#sobre" class="mobile-nav-link">Sobre Mim</a></li>
+            <li><a href="#metodologia" class="mobile-nav-link">Protocolo EVOLUIR</a></li>
+            <li><a href="#servicos" class="mobile-nav-link">Serviços & Consultas</a></li>
+            <li><a href="#calculadora" class="mobile-nav-link">Calculadora de Hidratação</a></li>
+            <li><a href="#galeria" class="mobile-nav-link">Galeria & Resultados</a></li>
+            <li><a href="#contato" class="mobile-nav-link">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu-footer">
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Nutri%20Maria%20Helena!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20consultas." 
+             class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            <span>Agendar pelo WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================
+         2. HERO SECTION (100VH, IMPACTANTE, VÍDEO/IMAGEM COVER)
+         ======================================================== -->
+    <section class="hero-section" id="inicio">
+      <!-- Mídia de Fundo (Estruturada para Vídeo ou Imagem de Alta Resolução) -->
+      <div class="hero-bg-media">
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="auto">
+          <source src="assets/hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-bg-overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="container hero-container">
+        <!-- Conteúdo Principal do Hero -->
+        <div class="hero-content animate__animated animate__fadeInUp">
+          <div class="hero-tag-badge">
+            <span class="badge-dot"></span>
+            <span>Nutrição Esportiva & Emagrecimento Consciente</span>
+          </div>
+
+          <!-- Título com Efeito de Digitação (Typing Effect via JS) -->
+          <h1 class="hero-title">
+            <span id="typingText" class="typing-target"></span><span class="typing-cursor" aria-hidden="true">|</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Resultados reais, definição muscular e perda de gordura sem dietas punitivas. 
+            Através do <strong>Protocolo EVOLUIR</strong>, alinhamos a ciência metabólica à sua rotina real, trabalho e vida social.
+          </p>
+
+          <div class="hero-cta-group">
+            <!-- [CONFIGURAR LINK WHATSAPP PRINCIPAL] -->
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Nutri%20Maria%20Helena!%20Quero%20agendar%20minha%20consulta." 
+               class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+              <span>Agendar Minha Consulta</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <a href="#metodologia" class="btn btn-secondary btn-lg">
+              <span>Conhecer o Protocolo</span>
+            </a>
+          </div>
+
+          <!-- Métricas de Prova Social no Hero -->
+          <div class="hero-proof-strip">
+            <div class="proof-item">
+              <span class="proof-number">+1.500</span>
+              <span class="proof-label">Vidas transformadas</span>
+            </div>
+            <div class="proof-divider" aria-hidden="true"></div>
+            <div class="proof-item">
+              <span class="proof-number">100%</span>
+              <span class="proof-label">Plano individualizado</span>
+            </div>
+            <div class="proof-divider" aria-hidden="true"></div>
+            <div class="proof-item">
+              <div class="proof-rating" aria-label="Avaliação 5 estrelas">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <strong class="rating-text">5.0</strong>
+              </div>
+              <span class="proof-label">Avaliação no Google</span>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Foto da Nutricionista com moldura -->
+        <div class="hero-photo animate__animated animate__fadeInRight animate__delay-1s" id="heroPhoto">
+          <div class="hero-photo-frame">
+            <img src="assets/maria-helena.jpg" alt="Nutricionista Maria Helena" width="558" height="790">
+            <div class="hero-chip chip-top"><strong>+1.500</strong><span>vidas transformadas</span></div>
+            <div class="hero-chip chip-bottom"><strong>Maria Helena</strong><span>Nutricionista Esportiva</span></div>
+          </div>
+        </div>
+
+        <!-- Indicador de Rolagem Sutil -->
+        <a href="#sobre" class="hero-scroll-indicator" aria-label="Rolar para a seção sobre">
+          <span class="scroll-mouse">
+            <span class="scroll-wheel"></span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3. SEÇÃO "CONHEÇA SUA NUTRICIONISTA"
+         ======================================================== -->
+    <section class="section about-section" id="sobre">
+      <div class="container">
+        <div class="grid-2-cols about-grid">
+          <!-- Coluna Imagem / Perfil da Nutricionista -->
+          <div class="about-visual reveal-on-scroll">
+            <div class="about-card-frame">
+              <!-- [INSERIR IMAGEM SOBRE: FOTO DE ATENDIMENTO OU DETALHE - RECOMENDADO 550x680px] -->
+              <img 
+                src="assets/maria-helena.jpg" 
+                alt="Nutricionista Maria Helena sorrindo" 
+                class="about-img"
+                loading="lazy"
+                width="520"
+                height="640"
+              >
+              <div class="experience-card glass-card">
+                <span class="exp-number">8+</span>
+                <span class="exp-text">Anos de experiência clínica e esportiva</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna Texto / Biografia com Tipografia Refinada -->
+          <div class="about-content reveal-on-scroll delay-1">
+            <span class="section-tag">Conheça Sua Nutricionista</span>
+            <h2 class="section-title">
+              Nutrição de verdade vai muito além de <span class="text-highlight">cortar alimentos.</span>
+            </h2>
+
+            <p class="paragraph-lead">
+              Olá, eu sou a <strong>Maria Helena</strong>. Sou nutricionista clínica e esportiva pós-graduada, apaixonada por hábitos sustentáveis e ciência aplicada. Compreendo na pele o desafio de equilibrar uma carreira acelerada, família e a vontade legítima de construir um corpo forte, definido e com saúde plena.
+            </p>
+
+            <p class="paragraph-text">
+              Em quase uma década de atendimentos, vi centenas de pessoas frustradas não por falta de disciplina, mas por seguirem <em>dietas de gaveta e cardápios restritivos</em> — que eliminam tudo o que traz prazer e inevitavelmente resultam no desgaste do efeito sanfona.
+            </p>
+
+            <div class="features-checklist">
+              <div class="checklist-item">
+                <span class="check-icon-circle">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <div>
+                  <strong>Plano 100% individualizado para a sua rotina:</strong> 
+                  Se você almoça fora, viaja a trabalho ou treina de madrugada, a nutrição se molda à sua vida — nunca o contrário.
+                </div>
+              </div>
+
+              <div class="checklist-item">
+                <span class="check-icon-circle">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <div>
+                  <strong>Foco em Composição Corporal Inteligente:</strong> 
+                  Queimar gordura preservando o tônus e a massa muscular. Mais energia diária e corpo harmônico.
+                </div>
+              </div>
+
+              <div class="checklist-item">
+                <span class="check-icon-circle">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <div>
+                  <strong>Acolhimento humanizado e escuta ativa:</strong> 
+                  Aqui você encontra suporte técnico e parceria para criar hábitos consistentes que permanecem para sempre.
+                </div>
+              </div>
+            </div>
+
+            <div class="about-action">
+              <a href="#servicos" class="btn btn-primary">
+                Ver Como Posso Te Ajudar
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. SEÇÃO "PROTOCOLO EVOLUIR" (7 PILARES: E-V-O-L-U-I-R)
+         ======================================================== -->
+    <section class="section method-section" id="metodologia">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">Metodologia Exclusiva</span>
+          <h2 class="section-title">O que é o <span class="text-highlight">Protocolo EVOLUIR?</span></h2>
+          <p class="section-description">
+            Um ecossistema completo estruturado em 7 pilares interconectados para reprogramar sua relação com o alimento, otimizar sua performance e consolidar o emagrecimento definitivo sem neuras.
+          </p>
+        </div>
+
+        <!-- CSS Grid dos 7 Pilares: E - V - O - L - U - I - R -->
+        <div class="evoluir-grid">
+          
+          <!-- Pilar 1: E -->
+          <div class="evoluir-card reveal-on-scroll">
+            <div class="evoluir-header">
+              <span class="evoluir-letter">E</span>
+              <span class="evoluir-step">Pilar 1</span>
+            </div>
+            <h3 class="evoluir-title">Estratégia Individualizada</h3>
+            <p class="evoluir-text">
+              Avaliação metabólica minuciosa, exames laboratoriais, histórico clínico e preferências afetivas de paladar. Prescrição personalizada com base em evidências.
+            </p>
+            <div class="evoluir-tag">Mapeamento Clínico</div>
+          </div>
+
+          <!-- Pilar 2: V -->
+          <div class="evoluir-card reveal-on-scroll delay-1">
+            <div class="evoluir-header">
+              <span class="evoluir-letter">V</span>
+              <span class="evoluir-step">Pilar 2</span>
+            </div>
+            <h3 class="evoluir-title">Vida Real & Flexibilidade</h3>
+            <p class="evoluir-text">
+              Comer bem precisa ser viável no dia a dia. Você aprende a incluir refeições livres, restaurantes e momentos com amigos sem culpa e sem frear seus resultados.
+            </p>
+            <div class="evoluir-tag">Sem Terrorismo</div>
+          </div>
+
+          <!-- Pilar 3: O -->
+          <div class="evoluir-card reveal-on-scroll delay-2">
+            <div class="evoluir-header">
+              <span class="evoluir-letter">O</span>
+              <span class="evoluir-step">Pilar 3</span>
+            </div>
+            <h3 class="evoluir-title">Otimização de Performance</h3>
+            <p class="evoluir-text">
+              Sincronização dos macronutrientes com seu esporte (musculação, corrida, ciclismo, crossfit). Mais força, menos fadiga e regeneração muscular acelerada.
+            </p>
+            <div class="evoluir-tag">Timing de Treino</div>
+          </div>
+
+          <!-- Pilar 4: L -->
+          <div class="evoluir-card reveal-on-scroll delay-3">
+            <div class="evoluir-header">
+              <span class="evoluir-letter">L</span>
+              <span class="evoluir-step">Pilar 4</span>
+            </div>
+            <h3 class="evoluir-title">Longevidade dos Resultados</h3>
+            <p class="evoluir-text">
+              Fim definitivo do efeito sanfona. Estratégias metabólicas para estabilização hormonal, saciedade sustentada e manutenção natural da composição corporal.
+            </p>
+            <div class="evoluir-tag">Manutenção Real</div>
+          </div>
+
+          <!-- Pilar 5: U -->
+          <div class="evoluir-card reveal-on-scroll">
+            <div class="evoluir-header">
+              <span class="evoluir-letter">U</span>
+              <span class="evoluir-step">Pilar 5</span>
+            </div>
+            <h3 class="evoluir-title">Unidade Corpo & Mente</h3>
+            <p class="evoluir-text">
+              Nutrição comportamental integrada. Consciência sobre fome fisiológica versus fome emocional, ressignificando gatilhos de ansiedade e autocobrança.
+            </p>
+            <div class="evoluir-tag">Comportamento</div>
+          </div>
+
+          <!-- Pilar 6: I -->
+          <div class="evoluir-card reveal-on-scroll delay-1">
+            <div class="evoluir-header">
+              <span class="evoluir-letter">I</span>
+              <span class="evoluir-step">Pilar 6</span>
+            </div>
+            <h3 class="evoluir-title">Inteligência Nutricional</h3>
+            <p class="evoluir-text">
+              Você conquista autonomia total. Aprende a ler rótulos, planejar marmitas rápidas e fazer substituições inteligentes no aplicativo próprio sem depender de dietas prontas.
+            </p>
+            <div class="evoluir-tag">Autonomia Alimentar</div>
+          </div>
+
+          <!-- Pilar 7: R -->
+          <div class="evoluir-card evoluir-card-highlight reveal-on-scroll delay-2">
+            <div class="evoluir-header">
+              <span class="evoluir-letter">R</span>
+              <span class="evoluir-step">Pilar 7</span>
+            </div>
+            <h3 class="evoluir-title">Resultados Duradouros</h3>
+            <p class="evoluir-text">
+              Consolidação de um estilo de vida ativo e saudável. Uma jornada de transformação que reflete em autoestima, vitalidade e qualidade de vida por anos a fio.
+            </p>
+            <div class="evoluir-tag highlight-tag">Sucesso Contínuo</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         5. CONSULTA PRESENCIAL E ONLINE (CARDS PREMIUM COM BORDA VERDE)
+         ======================================================== -->
+    <section class="section services-section" id="servicos">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">Formatos de Atendimento</span>
+          <h2 class="section-title">Escolha o formato ideal para a sua rotina</h2>
+          <p class="section-description">
+            Seja no consultório presencial em São Paulo ou por videoconferência em qualquer lugar do mundo, o rigor técnico, o acolhimento e o suporte próximo são impecáveis.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card Serviço 1: Presencial -->
+          <div class="service-card reveal-on-scroll">
+            <div class="service-card-top-accent" aria-hidden="true"></div>
+            
+            <div class="service-badge">Consultório Físico</div>
+            
+            <div class="service-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            
+            <h3 class="service-title">Consulta Presencial</h3>
+            <p class="service-summary">
+              Experiência completa e acolhedora em consultório premium. Ideal para quem busca avaliação física direta em aparelhos de tecnologia profissional.
+            </p>
+
+            <ul class="service-features">
+              <li>
+                <span class="feature-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                </span>
+                <span><strong>Bioimpedância Tetrapolar InBody:</strong> Análise de massa magra segmentada, gordura visceral e água corporal.</span>
+              </li>
+              <li>
+                <span class="feature-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </span>
+                <span><strong>Antropometria Completa (Dobras):</strong> Aferição precisa de pregas cutâneas e circunferências corporais.</span>
+              </li>
+              <li>
+                <span class="feature-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                </span>
+                <span><strong>Plano Alimentar construído na hora:</strong> Você já sai da consulta sabendo cada refeição sem esperar dias.</span>
+              </li>
+              <li>
+                <span class="feature-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                </span>
+                <span><strong>Aplicativo Móvel Exclusivo:</strong> Cardápio interativo, lista de compras e receitas saudáveis no celular.</span>
+              </li>
+              <li>
+                <span class="feature-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                </span>
+                <span><strong>Suporte Direto via WhatsApp por 30 dias:</strong> Canal direto comigo para tirar dúvidas da sua rotina.</span>
+              </li>
+            </ul>
+
+            <div class="service-footer">
+              <span class="service-location">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                São Paulo - SP (Jardins / Faria Lima)
+              </span>
+              <!-- [CONFIGURAR LINK WHATSAPP PRESENCIAL] -->
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Nutri%20Maria%20Helena!%20Gostaria%20de%20agendar%20uma%20Consulta%20Presencial." 
+                 class="btn btn-outline btn-block" target="_blank" rel="noopener noreferrer">
+                Agendar Consulta Presencial
+              </a>
+            </div>
+          </div>
+
+          <!-- Card Serviço 2: Online (Destaque) -->
+          <div class="service-card featured-service reveal-on-scroll delay-1">
+            <div class="service-card-top-accent" aria-hidden="true"></div>
+
+            <div class="service-badge highlight-badge">Mais Escolhido • Sem Fronteiras</div>
+            
+            <div class="service-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+
+            <h3 class="service-title">Consulta Online (Brasil & Exterior)</h3>
+            <p class="service-summary">
+              O mesmo rigor científico e proximidade clínica com a comodidade de ser atendido onde estiver, sem trânsito e sem perda de tempo.
+            </p>
+
+            <ul class="service-features">
+              <li>
+                <span class="feature-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                </span>
+                <span><strong>Videoconferência HD Aprofundada (60 a 75 min):</strong> Análise da rotina, histórico clínico e metas individuais.</span>
+              </li>
+              <li>
+                <span class="feature-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                </span>
+                <span><strong>Protocolo Fotográfico Padronizado:</strong> Guia simples para medição e monitoramento de evolução à distância.</span>
+              </li>
+              <li>
+                <span class="feature-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                </span>
+                <span><strong>Plano Entregue em até 24h:</strong> Prescrição individualizada com lista de compras adaptada à sua cidade ou país.</span>
+              </li>
+              <li>
+                <span class="feature-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                </span>
+                <span><strong>Aplicativo Móvel Completo:</strong> Alertas de hidratação, controle de refeições e chat diário.</span>
+              </li>
+              <li>
+                <span class="feature-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                </span>
+                <span><strong>Acompanhamento Ativo no WhatsApp:</strong> Ajustes rápidos de cardápio e suporte contínuo entre consultas.</span>
+              </li>
+            </ul>
+
+            <div class="service-footer">
+              <span class="service-location">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                Atendimento Global via Google Meet / Zoom
+              </span>
+              <!-- [CONFIGURAR LINK WHATSAPP ONLINE] -->
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Nutri%20Maria%20Helena!%20Gostaria%20de%20agendar%20uma%20Consulta%20Online." 
+                 class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer">
+                Agendar Consulta Online
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         6. FERRAMENTA INTERATIVA: CALCULADORA DE HIDRATAÇÃO (GLASSMORPHISM)
+         ======================================================== -->
+    <section class="section tool-section" id="calculadora">
+      <div class="container">
+        
+        <!-- Card Centralizado com Glassmorphism Refinado -->
+        <div class="tool-wrapper glass-calculator-card reveal-on-scroll">
+          <div class="tool-intro text-center">
+            <span class="section-tag">Ferramenta Interativa Gratuita</span>
+            <h2 class="tool-title">Calculadora de Hidratação Inteligente</h2>
+            <p class="tool-text">
+              A ingestão de água é o catalisador silencioso do seu metabolismo. A desidratação crônica prejudica a força nos treinos, atrasa a queima de gordura e desperta aquela falsa sensação de fome. 
+              Descubra sua meta hídrica diária ideal personalizada:
+            </p>
+
+            <div class="tool-badges">
+              <div class="badge-mini">
+                <span class="badge-svg-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                </span>
+                <span>Termogênese Ativa</span>
+              </div>
+              <div class="badge-mini">
+                <span class="badge-svg-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </span>
+                <span>Mais Foco & Energia</span>
+              </div>
+              <div class="badge-mini">
+                <span class="badge-svg-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </span>
+                <span>Fim do Inchaço</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulário da Calculadora -->
+          <div class="calculator-box">
+            <form id="waterCalculatorForm" class="calc-form" novalidate>
+              <!-- Campo 1: Peso -->
+              <div class="form-group">
+                <label for="userWeight" class="form-label">
+                  1. Informe seu peso atual (em kg)
+                </label>
+                <div class="input-with-affix">
+                  <input 
+                    type="number" 
+                    id="userWeight" 
+                    name="weight" 
+                    class="form-control" 
+                    placeholder="Ex: 70" 
+                    min="30" 
+                    max="250" 
+                    step="0.5" 
+                    required
+                  >
+                  <span class="input-affix">kg</span>
+                </div>
+                <span class="form-error-msg" id="weightError" aria-live="polite"></span>
+              </div>
+
+              <!-- Campo 2: Nível de Atividade Física (Zero emojis, SVGs elegantes) -->
+              <div class="form-group">
+                <label class="form-label">
+                  2. Selecione seu nível de atividade física
+                </label>
+                
+                <div class="activity-options-grid" role="radiogroup" aria-label="Nível de atividade física">
+                  <!-- Opção Leve (35ml/kg) -->
+                  <label class="activity-card" for="actLight">
+                    <input type="radio" name="activityLevel" id="actLight" value="35" checked>
+                    <div class="card-inner">
+                      <span class="act-svg-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="m9 20 3-6 3 2 2 4"/><path d="m6 16 3-4-1-4 4-2 3 3"/></svg>
+                      </span>
+                      <strong class="act-name">Leve</strong>
+                      <span class="act-desc">Rotina de escritório, caminhadas leves ocasionais</span>
+                      <span class="act-rate">35 ml/kg</span>
+                    </div>
+                  </label>
+
+                  <!-- Opção Moderada (40ml/kg) -->
+                  <label class="activity-card" for="actModerate">
+                    <input type="radio" name="activityLevel" id="actModerate" value="40">
+                    <div class="card-inner">
+                      <span class="act-svg-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 6.5 11 11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/></svg>
+                      </span>
+                      <strong class="act-name">Moderada</strong>
+                      <span class="act-desc">Treinos 3 a 5x por semana (musculação, corrida, pilates)</span>
+                      <span class="act-rate">40 ml/kg</span>
+                    </div>
+                  </label>
+
+                  <!-- Opção Intensa (45ml/kg) -->
+                  <label class="activity-card" for="actIntense">
+                    <input type="radio" name="activityLevel" id="actIntense" value="45">
+                    <div class="card-inner">
+                      <span class="act-svg-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                      </span>
+                      <strong class="act-name">Intensa</strong>
+                      <span class="act-desc">Atletas, crossfit, treinos pesados diários</span>
+                      <span class="act-rate">45 ml/kg</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Botão de Ação -->
+              <button type="submit" class="btn btn-primary btn-block calc-submit-btn">
+                <span>Calcular Minha Meta de Água</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </form>
+
+            <!-- Área de Resultados Dinâmicos (Preenchida pelo JavaScript) -->
+            <div id="calculatorResult" class="calc-result-container hidden" aria-live="polite">
+              <div class="result-header">
+                <span class="result-eyebrow">Sua meta diária recomendada:</span>
+                <div class="result-main-value">
+                  <span id="resultLiters" class="liters-number">0.0</span>
+                  <span class="liters-unit">Litros / dia</span>
+                </div>
+              </div>
+
+              <!-- Barra Visual de Nível de Hidratação -->
+              <div class="water-visual-bar" title="Indicador visual de hidratação">
+                <div class="water-fill-level" id="waterFillLevel" style="width: 0%;"></div>
+              </div>
+
+              <!-- Equivalências Visuais (Garrafas e Copos com SVGs) -->
+              <div class="result-equivalents">
+                <div class="eq-item">
+                  <span class="eq-svg-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6"/><path d="M10 2v3a2 2 0 0 1-.6 1.4L8 8v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8l-1.4-1.6A2 2 0 0 1 14 5V2"/><path d="M8 14h8"/></svg>
+                  </span>
+                  <div>
+                    <strong id="resultBottles">0</strong>
+                    <span>garrafinhas de 500ml</span>
+                  </div>
+                </div>
+                <div class="eq-item">
+                  <span class="eq-svg-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14l-2 15a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 4z"/><line x1="5" y1="9" x2="19" y2="9"/></svg>
+                  </span>
+                  <div>
+                    <strong id="resultGlasses">0</strong>
+                    <span>copos de 250ml</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mensagem de Contexto e CTA de Conversão -->
+              <div class="result-feedback-card">
+                <div class="feedback-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5.76.76 1.23 1.52 1.41 2.5z"/></svg>
+                  <span>Dica da Nutri Maria Helena</span>
+                </div>
+                <p id="resultAdviceText" class="feedback-text">
+                  A hidratação é apenas o primeiro pilar! Para queimar gordura e ganhar massa muscular sem estagnação, seus macronutrientes precisam estar ajustados ao seu metabolismo.
+                </p>
+                <!-- [CONFIGURAR LINK WHATSAPP COM RESULTADO DA CALCULADORA] -->
+                <a href="#" id="calcCtaWhatsapp" class="btn btn-primary btn-sm btn-block" target="_blank" rel="noopener noreferrer">
+                  Agendar Consulta para Ajustar Minha Dieta Completa
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         7. GALERIA DE HISTÓRIAS DE SUCESSO (BENTO GRID & DEPOIMENTOS)
+         ======================================================== -->
+    <section class="section gallery-testimonials-section" id="galeria">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">Histórias de Sucesso</span>
+          <h2 class="section-title">Resultados reais de quem decidiu <span class="text-highlight">evoluir</span></h2>
+          <p class="section-description">
+            Conheça o impacto do Protocolo EVOLUIR na prática: pessoas reais que conquistaram definição corporal, saúde duradoura e energia de sobra.
+          </p>
+        </div>
+
+        <!-- Números em destaque (contadores animados) -->
+        <div class="stats-row reveal-on-scroll">
+          <div class="stat-box"><span class="stat-num" data-count="1500" data-prefix="+">0</span><span class="stat-label">Vidas transformadas</span></div>
+          <div class="stat-box"><span class="stat-num" data-count="96" data-suffix="%">0</span><span class="stat-label">Adesão sem efeito sanfona</span></div>
+          <div class="stat-box"><span class="stat-num" data-count="8" data-suffix="+">0</span><span class="stat-label">Anos de experiência</span></div>
+          <div class="stat-box"><span class="stat-num" data-count="5" data-decimals="1">0</span><span class="stat-label">Avaliação no Google</span></div>
+        </div>
+
+        <!-- Filtros interativos -->
+        <div class="result-filters reveal-on-scroll" role="tablist" aria-label="Filtrar resultados">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="esporte">Esporte</button>
+          <button class="filter-btn" data-filter="clinica">Clínica</button>
+          <button class="filter-btn" data-filter="rotina">Rotina</button>
+        </div>
+
+        <div class="results-grid reveal-on-scroll">
+          <figure class="result-card" data-cat="esporte">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=700&q=80" alt="Evolução do Pace & Definição" loading="lazy">
+            <figcaption><span class="bento-pill">Corrida & Hipertrofia</span><h3>Evolução do Pace & Definição</h3><p>-8kg de gordura mantendo o rendimento</p></figcaption>
+          </figure>
+          <figure class="result-card" data-cat="clinica">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80" alt="Bioimpedância InBody" loading="lazy">
+            <figcaption><span class="bento-pill">Clínica & Antropometria</span><h3>Bioimpedância InBody</h3><p>Acompanhamento milimétrico de massa magra</p></figcaption>
+          </figure>
+          <figure class="result-card" data-cat="rotina">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=700&q=80" alt="Pratos Reais e Gostosos" loading="lazy">
+            <figcaption><span class="bento-pill">Alimentação Flexível</span><h3>Pratos Reais e Gostosos</h3><p>Sem abrir mão do convívio familiar</p></figcaption>
+          </figure>
+          <figure class="result-card" data-cat="esporte">
+            <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=700&q=80" alt="Da Esteira à Meia Maratona" loading="lazy">
+            <figcaption><span class="bento-pill">Conquista Esportiva</span><h3>Da Esteira à Meia Maratona</h3><p>Mais disposição para o trabalho e o esporte</p></figcaption>
+          </figure>
+          </div>
+
+        <!-- Cards de Depoimentos Escritos com Estrelas SVG -->
+        <div class="testimonials-grid reveal-on-scroll delay-1">
+          <!-- Depoimento 1: Performance Esportiva -->
+          <article class="testimonial-card">
+            <div class="test-rating" aria-label="Avaliação 5 de 5 estrelas">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="test-quote">
+              "Eu treinava pesado na academia e corria, mas vivia fadigado e a barriga não sumia. A Maria Helena organizou meus carboidratos sem cortar nada do que eu gosto. <strong>Baixei de 19% para 11% de gordura</strong> e melhorei meu pace na corrida de 10km em tempo recorde!"
+            </p>
+            <div class="test-author-box">
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" 
+                alt="Paciente Roberto Dias" 
+                class="author-avatar"
+                loading="lazy"
+                width="52"
+                height="52"
+              >
+              <div class="author-info">
+                <strong class="author-name">Roberto Dias, 34 anos</strong>
+                <span class="author-role">Advogado & Corredor Amador</span>
+                <span class="author-metric">Resultado: -8kg de gordura + Ganho muscular</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Depoimento 2: Rotina Corrida & Emagrecimento -->
+          <article class="testimonial-card featured-testimonial">
+            <div class="test-rating" aria-label="Avaliação 5 de 5 estrelas">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="test-quote">
+              "Trabalho 12 horas por dia em hospital e achava impossível fazer dieta. O Protocolo EVOLUIR foi um divisor de águas: a Maria montou opções rápidas para comprar prontas e planejou meus plantões. <strong>Eliminei 13kg em 4 meses</strong> sem nunca passar fome ou fraqueza."
+            </p>
+            <div class="test-author-box">
+              <img 
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" 
+                alt="Paciente Dra. Camila Prado" 
+                class="author-avatar"
+                loading="lazy"
+                width="52"
+                height="52"
+              >
+              <div class="author-info">
+                <strong class="author-name">Dra. Camila Prado, 31 anos</strong>
+                <span class="author-role">Médica Plantonista</span>
+                <span class="author-metric">Resultado: -13kg e exames de sangue normalizados</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Depoimento 3: Sem Efeito Sanfona -->
+          <article class="testimonial-card">
+            <div class="test-rating" aria-label="Avaliação 5 de 5 estrelas">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="test-quote">
+              "Fiz dietas restritivas a vida toda e sempre engordava o dobro depois. Com a Maria Helena aprendi a comer pizza no sábado com meus filhos e ainda assim emagrecer. <strong>Hoje me olho no espelho com alegria</strong> e tenho disposição para brincar e treinar todos os dias."
+            </p>
+            <div class="test-author-box">
+              <img 
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" 
+                alt="Paciente Lucas Mendes" 
+                class="author-avatar"
+                loading="lazy"
+                width="52"
+                height="52"
+              >
+              <div class="author-info">
+                <strong class="author-name">Lucas Mendes, 42 anos</strong>
+                <span class="author-role">Empresário</span>
+                <span class="author-metric">Resultado: -10kg sustentados há mais de 1 ano</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         8. SEÇÃO FINAL (CTA BANNER 100% CENTRALIZADO)
+         ======================================================== -->
+    <section class="section cta-final-section">
+      <div class="container">
+        
+        <div class="cta-banner-centered glass-card reveal-on-scroll">
+          <h2 class="banner-title text-center">
+            Pronto para conquistar sua melhor forma física sem neuras?
+          </h2>
+          <p class="banner-subtitle text-center">
+            As vagas de acompanhamento mensal são limitadas para assegurar a máxima atenção e personalização de cada paciente.
+          </p>
+          <div class="banner-btn-wrapper text-center">
+            <!-- [CONFIGURAR LINK WHATSAPP CTA FINAL] -->
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Nutri%20Maria%20Helena!%20Quero%20dar%20o%20primeiro%20passo%20e%20agendar%20minha%20consulta." 
+               class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+              <span>Agendar Minha Consulta Agora</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       9. RODAPÉ (FOOTER LIMPO COM CRÉDITO ZYNTEK)
+       ======================================================== -->
+  <footer class="site-footer" id="contato">
+    <div class="container footer-container">
+      
+      <div class="footer-grid">
+        <!-- Coluna 1: Marca & Apresentação -->
+        <div class="footer-col brand-col">
+          <a href="#topo" class="footer-logo">
+            <span class="logo-symbol">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12a10 10 0 0 1 10-10z"></path>
+                <path d="M12 6c-3 3-3 8 0 12"></path>
+              </svg>
+            </span>
+            <span class="footer-brand-name">Maria Helena</span>
+          </a>
+          <p class="footer-tagline">
+            Nutrição Esportiva, Emagrecimento Consciente e Saúde Integrativa. O Protocolo EVOLUIR desenvolvido sob medida para a sua rotina real.
+          </p>
+          <div class="crn-badge">
+            CRN-3 00000/SP • Registro Ativo no Conselho Regional de Nutricionistas
+          </div>
+        </div>
+
+        <!-- Coluna 2: Navegação Rápida -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre a Nutricionista</a></li>
+            <li><a href="#metodologia">O Protocolo EVOLUIR</a></li>
+            <li><a href="#servicos">Consultas Presencial & Online</a></li>
+            <li><a href="#calculadora">Calculadora de Água</a></li>
+            <li><a href="#galeria">Resultados & Galeria</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Atendimento & Horários -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Atendimento</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <strong>Consultório:</strong>
+              <span>Av. Brigadeiro Faria Lima, 1800 - Jardins, São Paulo/SP</span>
+            </li>
+            <li>
+              <strong>Atendimento Online:</strong>
+              <span>Brasil e Exterior (Plataforma Segura)</span>
+            </li>
+            <li>
+              <strong>Horário:</strong>
+              <span>Segunda a Sexta: 08h às 20h | Sábados: 08h às 13h</span>
+            </li>
+            <li>
+              <!-- [CONFIGURAR E-MAIL REAL AQUI] -->
+              <strong>E-mail:</strong>
+              <a href="mailto:contato@mariahelenanutri.com.br">contato@mariahelenanutri.com.br</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Redes Sociais & Contato Rápido -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Acompanhe nas Redes</h4>
+          <p class="footer-text-small">Dicas diárias, receitas práticas e ciência aplicada nos stories.</p>
+          
+          <div class="social-links-row">
+            <!-- [CONFIGURAR LINK DO INSTAGRAM AQUI] -->
+            <a href="https://instagram.com/mariahelenanutri" target="_blank" rel="noopener noreferrer" class="social-btn instagram-btn" aria-label="Acessar perfil no Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+
+            <!-- [CONFIGURAR LINK DO WHATSAPP AQUI] -->
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp-btn" aria-label="Conversar no WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Botão que abre o FAQ Modal diretamente pelo Footer -->
+          <button type="button" class="btn btn-outline btn-sm btn-block footer-faq-btn" id="openFaqFromFooter">
+            Ver Dúvidas Frequentes (FAQ)
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de Copyright e Crédito Zyntek -->
+      <div class="footer-bottom">
+        <p class="copyright">
+          © <span id="currentYear">2026</span> Maria Helena Nutrição & Performance. Todos os direitos reservados.
+        </p>
+        <p class="legal-disclaimer">
+          As informações contidas neste site possuem caráter educativo e não substituem o aconselhamento, diagnóstico ou prescrição nutricional individualizada realizada por profissional devidamente habilitado.
+        </p>
+        <!-- Crédito Solicitado: Desenvolvido por Zyntek -->
+        <p class="developer-credit">
+          Desenvolvido por <a href="https://zyntek.com.br" target="_blank" rel="noopener noreferrer">Zyntek</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       WIDGET FLUTUANTE DE ATENDIMENTO & FAQ (SPEED DIAL)
+       Canto Inferior Direito
+       ======================================================== -->
+  <aside class="floating-widget-wrapper" aria-label="Canais de Atendimento e Dúvidas">
+    <!-- Lista de Opções Expansíveis (Speed Dial) -->
+    <div class="floating-dial-menu" id="speedDialMenu" aria-hidden="true">
+      
+      <!-- Opção 1: WhatsApp -->
+      <!-- [CONFIGURAR LINK WHATSAPP: Substitua o número abaixo] -->
+      <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Nutri%20Maria%20Helena!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20d%C3%BAvidas." 
+         class="dial-action-btn dial-whatsapp" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         aria-label="Falar no WhatsApp">
+        <span class="dial-label">Falar no WhatsApp</span>
+        <span class="dial-icon-circle whatsapp-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+        </span>
+      </a>
+
+      <!-- Opção 2: Instagram -->
+      <!-- [CONFIGURAR LINK INSTAGRAM: Substitua o seu @ de usuário] -->
+      <a href="https://instagram.com/mariahelenanutri" 
+         class="dial-action-btn dial-instagram" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         aria-label="Ver meu Instagram">
+        <span class="dial-label">Ver meu Instagram</span>
+        <span class="dial-icon-circle instagram-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </span>
+      </a>
+
+      <!-- Opção 3: Dúvidas Frequentes (Abre Modal FAQ) -->
+      <button type="button" 
+              class="dial-action-btn dial-faq" 
+              id="openFaqModalBtn" 
+              aria-label="Abrir perguntas e dúvidas frequentes">
+        <span class="dial-label">Dúvidas Frequentes</span>
+        <span class="dial-icon-circle faq-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </span>
+      </button>
+
+    </div>
+
+    <!-- Botão Flutuante Principal (Trigger) -->
+    <button type="button" 
+            class="main-floating-trigger" 
+            id="floatingTriggerBtn" 
+            aria-label="Menu de Atendimento e Ajuda" 
+            aria-expanded="false" 
+            aria-haspopup="true">
+      <!-- Ícone Fechado (Atendimento / Balão) -->
+      <span class="trigger-icon icon-open">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+      </span>
+      <!-- Ícone Aberto (Fechar 'X') -->
+      <span class="trigger-icon icon-close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </span>
+      <!-- Pulso animado sutil -->
+      <span class="pulse-ring" aria-hidden="true"></span>
+    </button>
+  </aside>
+
+  <!-- ========================================================
+       MODAL DE FAQ (ACCORDION DE PERGUNTAS FREQUENTES)
+       ======================================================== -->
+  <div class="faq-modal-overlay" id="faqModalOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="faqModalTitle">
+    <div class="faq-modal-card glass-modal">
+      
+      <!-- Cabeçalho do Modal -->
+      <div class="faq-modal-header">
+        <div class="header-titles">
+          <span class="modal-eyebrow">Tire Suas Dúvidas</span>
+          <h3 id="faqModalTitle" class="modal-title">Perguntas Frequentes</h3>
+        </div>
+        <button type="button" class="modal-close-btn" id="closeFaqModalBtn" aria-label="Fechar janela de dúvidas">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Corpo do Modal com Accordion -->
+      <div class="faq-modal-body">
+        <div class="accordion-wrapper" id="faqAccordion">
+
+          <!-- Pergunta 1: Planos de Saúde -->
+          <div class="accordion-item active">
+            <button type="button" class="accordion-trigger" aria-expanded="true" aria-controls="faqAns1" id="faqQ1">
+              <span class="accordion-question">Atende convênios ou planos de saúde?</span>
+              <span class="accordion-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="accordion-content" id="faqAns1" role="region" aria-labelledby="faqQ1">
+              <div class="accordion-text">
+                O atendimento é <strong>particular</strong>, o que possibilita consulta aprofundada (mais de 1 hora), avaliação minuciosa sem correria e acompanhamento direto no WhatsApp. No entanto, fornecemos <strong>recibo e laudo detalhado para reembolso</strong> — a maioria dos planos de saúde (Bradesco, SulAmérica, Amil, Care Plus, Omint, etc.) reembolsa de 50% até 100% do valor da consulta!
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 2: Protocolo EVOLUIR -->
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faqAns2" id="faqQ2">
+              <span class="accordion-question">Como funciona o Protocolo EVOLUIR na prática?</span>
+              <span class="accordion-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="accordion-content" id="faqAns2" role="region" aria-labelledby="faqQ2">
+              <div class="accordion-text">
+                É uma metodologia desenvolvida para gerar resultados rápidos e sustentáveis sem efeito rebote. Começamos com uma <strong>anamnese clínica e alimentar profunda</strong>. Em seguida, calculamos suas demandas metabólicas e construímos juntos o plano no aplicativo. Durante todo o mês, monitoramos suas adaptações pelo WhatsApp, ajustando os macronutrientes conforme seu corpo responde aos treinos.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 3: Eficácia da Consulta Online -->
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faqAns3" id="faqQ3">
+              <span class="accordion-question">A consulta online tem a mesma eficácia da presencial?</span>
+              <span class="accordion-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="accordion-content" id="faqAns3" role="region" aria-labelledby="faqQ3">
+              <div class="accordion-text">
+                <strong>Sim, com total segurança e eficácia comprovada!</strong> Mais de 60% dos meus pacientes são atendidos online, inclusive atletas e pessoas residentes no exterior. A prescrição nutricional e a metodologia são exatamente as mesmas. Para o acompanhamento da composição corporal, utilizamos um protocolo padronizado de fotos guiadas e medidas corporais simples.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 4: Restrições & Suplementos -->
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faqAns4" id="faqQ4">
+              <span class="accordion-question">Vou precisar cortar carboidratos ou gastar com suplementos caros?</span>
+              <span class="accordion-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </button>
+            <div class="accordion-content" id="faqAns4" role="region" aria-labelledby="faqQ4">
+              <div class="accordion-text">
+                <strong>De forma alguma.</strong> Não fazemos terrorismo nutricional. Arroz, feijão, frutas, pães e doces podem perfeitamente fazer parte de uma estratégia de alta performance e emagrecimento. A suplementação só é indicada caso haja real necessidade comprovada em exames ou praticidade de rotina (como Whey Protein para bater metas de proteína diárias).
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Rodapé do Modal -->
+      <div class="faq-modal-footer">
+        <p class="modal-footer-note">Ainda tem alguma dúvida pontual sobre o seu caso?</p>
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Nutri%20Maria%20Helena!%20Li%20o%20FAQ%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20espec%C3%ADfica." 
+           class="btn btn-primary btn-sm btn-block" target="_blank" rel="noopener noreferrer">
+          Conversar Diretamente com a Equipe
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Script Vanilla JavaScript -->
+  <script src="script.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>
